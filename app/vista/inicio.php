@@ -11,18 +11,39 @@ $usuario = $_SESSION['usuario'];
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <link rel="stylesheet" href="../public/css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I.E. TENIENTE MIGUEL CORTES DEL CASTILLO – PIURA</title>
+  <link rel="stylesheet" href="../../public/css/styles_inicio.css">
+  <script src="../../public/js/scripts.js"></script>
 </head>
 <body>
-    <div class="inicio-container">
-        <h1>Bienvenido, <?= htmlspecialchars($usuario['nombre']); ?></h1>
+  <div class="container">
+    <!-- Menú lateral -->
+    <nav class="sidebar">
+      <h2>I.E. TENIENTE MIGUEL CORTES DEL CASTILLO – PIURA</h2>
+      <ul>
+        <li><a href="#" onclick="cargarSeccion('inicio')">Inicio</a></li>
+        <li><a href="#" onclick="cargarSeccion('usuarios')">Usuarios</a></li>
+        <li><a href="#" onclick="cargarSeccion('grados')">Grados y Secciones</a></li>
+        <li><a href="#" onclick="cargarSeccion('estudiantes')">Estudiantes</a></li>
+        <li><a href="#" onclick="cargarSeccion('asistencias')">Asistencias</a></li>
+        <li><a href="#" onclick="cargarSeccion('notas')">Notas</a></li>
+        <li><a href="#" onclick="cargarSeccion('reportes')">Reportes</a></li>
+        <li><a href="#" onclick="cargarSeccion('configuracion')">Configuración</a></li>
+        <li><a href="../controlador/AutenticacionController.php?action=logout" class="logout-btn">Cerrar Sesión</a></li>
+      </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+      <section id="contenido">
+        <h1>Hola, <?= htmlspecialchars($usuario['nombre']); ?>. Bienvenido al Sistema Escolar</h1>
         <p>Rol: <?= htmlspecialchars($usuario['tipo']); ?></p>
-        <a href="../controlador/AutenticacionController.php?accion=logout" class="logout-btn">Cerrar Sesión</a>
-    </div>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
