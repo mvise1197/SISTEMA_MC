@@ -17,13 +17,16 @@ $usuario = $_SESSION['usuario'];
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>I.E. TENIENTE MIGUEL CORTES DEL CASTILLO – PIURA</title>
   <link rel="stylesheet" href="../../public/css/styles_inicio.css">
-  <script src="../../public/js/scripts.js"></script>
+  <script src="../../public/js/scripts.js" defer></script>
 </head>
 <body>
   <div class="container">
+    <!-- Botón para colapsar el menú -->
+    <button id="menu-toggle" class="menu-toggle">☰</button>
+
     <!-- Menú lateral -->
     <nav class="sidebar">
-      <h2>I.E. TENIENTE MIGUEL CORTES DEL CASTILLO – PIURA</h2>
+      <h2>I.E. TENIENTE MIGUEL CORTES DEL CASTILLO <br> PIURA</h2><br><br>
       <ul>
         <li><a href="#" onclick="cargarSeccion('inicio')">Inicio</a></li>
         <li><a href="#" onclick="cargarSeccion('usuarios')">Usuarios</a></li>
@@ -41,7 +44,6 @@ $usuario = $_SESSION['usuario'];
     <main class="main-content">
       <section id="contenido">
         <h1>Hola, <?= htmlspecialchars($usuario['nombre']); ?>. Bienvenido al Sistema Escolar</h1>
-        <p>Rol: <?= htmlspecialchars($usuario['tipo']); ?></p>
       </section>
     </main>
   </div>
